@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 
 // import app components
@@ -23,7 +23,7 @@ class App extends Component {
 
   render() {
     return (
-      <BrowserRouter>
+      <HashRouter basename="/SnapScout">
         <div className="container">
           <Route render={props => <Header handleSubmit={this.handleSubmit} history={props.history} />} />
           <Switch>
@@ -36,7 +36,7 @@ class App extends Component {
             <Route component={NotFound} />
           </Switch>
         </div>
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }
