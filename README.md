@@ -13,6 +13,12 @@ The purpose of this project was to get familiar with React, React Router and  Ax
  Click the demo link or clone/download the repository on your local machine and open the index.html file with a browser.
  Create a config.js file in components folder. In config.js file write
   `export const apiKey = "YOUR_FLIKR_API_KEY";`
+ 
+ ##### Install dependencies
+`npm install`
+
+##### Run Snap Scout from the root directory.
+`npm start`
   
 ### Built With
 * React js
