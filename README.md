@@ -4,7 +4,7 @@
 ![](/snapscout.jpg)
 
 ### Summary
-Snap Scout is Gallery created using React and React Router. The Routes were setup for four default pages and a search page. Also the images were displayed using the Flickr API and axios to fetch data.
+Snap Scout is gallery created using React and React Router. The Routes were setup for four default pages and a search page. Also the images were displayed using the Flickr API and axios to fetch data.
  
  ### Motivation
 The purpose of this project was to get familiar with React, React Router and  Axios.
