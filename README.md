@@ -1,16 +1,16 @@
-# Snap Scout
+# Snap Shot
 
-[Demo of Snap Scout Here](https://yog9.github.io/SnapShot/)
+[Demo of Snap Shot Here](https://yog9.github.io/SnapShot/)
 
 ![](/snapscout.jpg)
 
 ### Summary
 
-Snap Scout is a gallery created using React and React Router. The Routes were setup for four default pages and a search page. Also the images were displayed using the Flickr API and axios to fetch data.
+Snap Shot is a gallery created using React,React Hooks, React Router and Context API. The Routes were setup for four default pages and a search page. Also the images were displayed using the Flickr API and axios to fetch data.
 
 ### Motivation
 
-The purpose of this project was to get familiar with React, React Router and Axios.
+The purpose of this project was to get familiar with React Hooks and Context API.
 
 ### Getting Started
 
@@ -30,6 +30,8 @@ Create a config.js file in components folder. In config.js file write
 
 - React js
 - React Router
+- React Hooks
+- Context API
 - Flickr API
 
 ### Features
