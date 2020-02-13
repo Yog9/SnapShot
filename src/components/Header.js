@@ -1,18 +1,15 @@
-import React, { Component } from 'react';
+import React from "react";
+import Form from "./Form";
+import Navigation from "./Navigation";
 
-import Form from './Form';
-import Navigation from './Navigation';
-
-class Header extends Component {
-  render() {
-    return (
-      <div>
-        <h1>SnapScout &trade;</h1> 
-        <Form history={this.props.history} handleSubmit={this.props.handleSubmit} />
-        <Navigation />
-      </div>
-    );
-  }
-}
+const Header = ({ history, handleSubmit }) => {
+  return (
+    <div>
+      <h1>SnapShot</h1>
+      <Form history={history} handleSubmit={handleSubmit} />
+      <Navigation />
+    </div>
+  );
+};
 
 export default Header;

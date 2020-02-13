@@ -1,15 +1,18 @@
 {
-  "name": "flickr-gallery-app",
+  "name": "snapshot",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Yog9.github.io/SnapScout",
+  "homepage": "https://Yog9.github.io/SnapShot",
   "dependencies": {
-    "axios": "^0.18.0",
-    "gh-pages": "^2.0.1",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-router-dom": "^5.0.0",
-    "react-scripts": "3.0.0"
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.4.0",
+    "@testing-library/user-event": "^7.2.1",
+    "axios": "^0.19.2",
+    "gh-pages": "^2.2.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.3.1"
   },
   "scripts": {
     "predeploy": "npm run build",
@@ -22,10 +25,16 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }

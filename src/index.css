@@ -3,23 +3,31 @@ body {
   font-family: 'Josefin Sans', Helvetica, Arial, sans-serif;
   color: #3f4850;
 }
+
 h2 {
   font-size: 2em;
   margin: 52px 0 40px;
   text-transform: capitalize;
+  color: #051c33;
+
 }
+
 h1 {
   font-family: 'Lobster', 'Josefin Sans', Helvetica, Arial, sans-serif;
   font-size: 4em;
+  color: #051c33;
 }
+
 ul {
   list-style-type: none;
   padding-left: 0;
 }
+
 a {
   text-decoration: none;
 }
-.is-hidden{
+
+.is-hidden {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -29,19 +37,22 @@ a {
   position: absolute;
   width: 1px;
 }
+
 .search-form {
   max-width: 460px;
   display: flex;
   margin: 0 auto 32px;
 }
+
 .search-form button {
   outline: none;
-  background-color: #438bbd;
+  background-color: #051c33;
   border: none;
   padding: 0px 15px;
   border-radius: 0 0.35em 0.35em 0;
   cursor: pointer;
 }
+
 input {
   font-size: 1em;
   width: 100%;
@@ -52,22 +63,26 @@ input {
   border-radius: 0.35em 0 0 0.35em;
   outline: none;
 }
+
 .main-nav li {
   width: 100%;
   margin-bottom: 1em;
 }
+
 .main-nav a {
   display: block;
-  background: #438bbd;
+  background: #051c33;
   border-radius: 3px;
   padding: 5px;
   color: #fff;
 }
+
 .main-nav .active,
 .main-nav a:hover,
 .search-form button:hover {
-  background-color: #275270;
+  background-color: #051c33;
 }
+
 .photo-container ul {
   display: flex;
   flex-flow: row wrap;
@@ -75,28 +90,34 @@ input {
   -ms-align-items: flex-start;
   align-items: flex-start;
 }
+
 .photo-container ul li {
   width: 220px;
   height: 165px;
   overflow: hidden;
   margin-bottom: 15px;
 }
+
 .photo-container ul img {
   width: 100%;
   transform: scale(1.25);
   transition: transform 1.25s;
 }
+
 .photo-container li:hover img {
   transform: scale(1.65);
 }
+
 .photo-container .not-found {
   width: 100%;
 }
 
 
 .loader {
-  border: 16px solid #f3f3f3; /* Light grey */
-  border-top: 16px solid #3498db; /* Blue */
+  border: 16px solid #f3f3f3;
+  /* Light grey */
+  border-top: 16px solid #051c33;
+  /* Blue */
   border-radius: 50%;
   width: 120px;
   height: 120px;
@@ -106,36 +127,45 @@ input {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .not-found {
-  padding-top: 5%; 
+  padding-top: 5%;
 }
 
 
-@media only screen and (max-width: 767px)  {
+@media only screen and (max-width: 767px) {
   body {
     padding-top: 2em;
   }
+
   .photo-container li {
     margin: auto;
   }
 }
 
-@media only screen and (min-width: 768px)  {
+@media only screen and (min-width: 768px) {
   body {
     padding-top: 4em;
   }
+
   .container {
     max-width: 960px;
     margin: auto;
   }
+
   .main-nav ul {
     display: flex;
     justify-content: center;
   }
+
   .main-nav li {
     margin: 10px;
     width: 100px;
