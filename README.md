@@ -22,7 +22,7 @@ Create a config.js file in components folder. In config.js file write
 
 `npm install`
 
-##### Run Snap Scout from the root directory.
+##### Run Snap Shot from the root directory.
 
 `npm start`
 
