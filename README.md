@@ -2,7 +2,7 @@
 
 [Demo of Snap Shot Here](https://yog9.github.io/SnapShot/)
 
-![](/snapscout.jpg)
+![](/snapscout.png)
 
 ### Summary
 
