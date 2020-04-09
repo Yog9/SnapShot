@@ -1,7 +1,39 @@
 body {
   text-align: center;
-  font-family: 'Josefin Sans', Helvetica, Arial, sans-serif;
+  font-family: "Josefin Sans", Helvetica, Arial, sans-serif;
   color: #3f4850;
+}
+.forkongithub a {
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  font-family: arial, sans-serif;
+  text-align: center;
+  font-weight: bold;
+  padding: 5px 40px;
+  font-size: 1rem;
+  line-height: 2rem;
+  position: relative;
+  transition: 0.5s;
+}
+.forkongithub a:hover {
+  background: #c11;
+  color: #fff;
+}
+.forkongithub a::before,
+.forkongithub a::after {
+  content: "";
+  width: 100%;
+  display: block;
+  position: absolute;
+  top: 1px;
+  left: 0;
+  height: 1px;
+  background: #fff;
+}
+.forkongithub a::after {
+  bottom: 1px;
+  top: auto;
 }
 
 h2 {
@@ -9,11 +41,10 @@ h2 {
   margin: 52px 0 40px;
   text-transform: capitalize;
   color: #051c33;
-
 }
 
 h1 {
-  font-family: 'Lobster', 'Josefin Sans', Helvetica, Arial, sans-serif;
+  font-family: "Lobster", "Josefin Sans", Helvetica, Arial, sans-serif;
   font-size: 4em;
   color: #051c33;
 }
@@ -112,7 +143,6 @@ input {
   width: 100%;
 }
 
-
 .loader {
   border: 16px solid #f3f3f3;
   /* Light grey */
@@ -139,7 +169,6 @@ input {
 .not-found {
   padding-top: 5%;
 }
-
 
 @media only screen and (max-width: 767px) {
   body {
@@ -169,5 +198,29 @@ input {
   .main-nav li {
     margin: 10px;
     width: 100px;
+  }
+}
+@media screen and (min-width: 800px) {
+  .forkongithub {
+    position: fixed;
+    display: block;
+    top: 0;
+    right: 0;
+    width: 200px;
+    overflow: hidden;
+    height: 200px;
+    z-index: 9999;
+  }
+  .forkongithub a {
+    width: 200px;
+    position: absolute;
+    top: 60px;
+    right: -60px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
   }
 }
