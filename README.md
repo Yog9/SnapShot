@@ -1,4 +1,5 @@
 # Snap Shot
+[![Build Status](https://travis-ci.org/Yog9/SnapShot.svg?branch=master)](https://travis-ci.org/Yog9/SnapShot)
 
 [Demo of Snap Shot Here](https://yog9.github.io/SnapShot/)
 
