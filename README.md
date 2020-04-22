@@ -1,4 +1,4 @@
-# Snap Shot
+# Snap Shot  [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?url=&hashtags=react,context-api,freecodecamp,developers)
 [![Build Status](https://travis-ci.org/Yog9/SnapShot.svg?branch=master)](https://travis-ci.org/Yog9/SnapShot)
 
 [Demo of Snap Shot Here](https://yog9.github.io/SnapShot/)
