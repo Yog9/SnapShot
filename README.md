@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/Yog9/SnapShot.svg?branch=master)](https://travis-ci.org/Yog9/SnapShot)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-[Demo of Snap Shot Here](https://yog9.github.io/SnapShot/)
+[Demo of Snap Shot](https://yog9.github.io/SnapShot/)
 
 ![](/snapscout.png)
 
