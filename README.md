@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![GitHub forks](https://img.shields.io/github/forks/Yog9/SnapShot.svg?style=social&label=Fork&maxAge=2592000)](https://GitHub.com/Yog9/SnapShot/network/)
 [![GitHub stars](https://img.shields.io/github/stars/Yog9/SnapShot.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/Yog9/SnapShot/stargazers/)
-[![HitCount](http://hits.dwyl.io/Yog9/badges.svg)](http://hits.dwyl.io/Yog9/badges)
+[![HitCount](http://hits.dwyl.com/Yog9/SnapShot.svg)](http://hits.dwyl.com/Yog9/SnapShot)
 
 [Demo of Snap Shot](https://yog9.github.io/SnapShot/)
 
