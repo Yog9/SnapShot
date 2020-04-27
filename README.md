@@ -45,8 +45,8 @@ Create a config.js file in components folder. In config.js file write
 
 **2. Search functionality added to search photos from API.**
 
-### Coming Soon
-
-- [ ] Create a carousel with react to browse photos.
+### Contributing
+Everyone is welcomed to contribute to this project. You can contribute either by submitting bugs or suggesting improvements by opening an issue on GitHub. Please see the [CONTRIBUTING](CONTRIBUTING.md) guidelines for more information.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
