@@ -1,4 +1,5 @@
-# Snap Shot  [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=See%20this%20react%20example&url=https://yog9.github.io/SnapShot/&hashtags=react,context-api,freecodecamp,developers)
+# Snap Shot [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=See%20this%20react%20example&url=https://yog9.github.io/SnapShot/&hashtags=react,context-api,freecodecamp,developers)
+
 [![Build Status](https://travis-ci.org/Yog9/SnapShot.svg?branch=master)](https://travis-ci.org/Yog9/SnapShot)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![GitHub forks](https://img.shields.io/github/forks/Yog9/SnapShot.svg?style=social&label=Fork&maxAge=2592000)](https://GitHub.com/Yog9/SnapShot/network/)
@@ -25,11 +26,11 @@ Create a config.js file in components folder. In config.js file write
 
 ##### Install dependencies
 
-`npm install`
+`yarn install`
 
 ##### Run Snap Shot from the root directory.
 
-`npm start`
+`yarn start`
 
 ### Built With
 
@@ -46,7 +47,7 @@ Create a config.js file in components folder. In config.js file write
 **2. Search functionality added to search photos from API.**
 
 ### Contributing
+
 Everyone is welcomed to contribute to this project. You can contribute either by submitting bugs or suggesting improvements by opening an issue on GitHub. Please see the [CONTRIBUTING](CONTRIBUTING.md) guidelines for more information.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-

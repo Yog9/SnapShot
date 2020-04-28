@@ -3,6 +3,7 @@ body {
   font-family: "Josefin Sans", Helvetica, Arial, sans-serif;
   color: #3f4850;
 }
+
 .forkongithub a {
   background: #000;
   color: #fff;
@@ -16,10 +17,12 @@ body {
   position: relative;
   transition: 0.5s;
 }
+
 .forkongithub a:hover {
   background: #c11;
   color: #fff;
 }
+
 .forkongithub a::before,
 .forkongithub a::after {
   content: "";
@@ -31,6 +34,7 @@ body {
   height: 1px;
   background: #fff;
 }
+
 .forkongithub a::after {
   bottom: 1px;
   top: auto;
@@ -77,10 +81,14 @@ a {
 
 .search-form button {
   outline: none;
-  background-color: #051c33;
   border: none;
   padding: 0px 15px;
   border-radius: 0 0.35em 0.35em 0;
+  cursor: pointer;
+}
+
+.active {
+  background-color: #051c33;
   cursor: pointer;
 }
 
@@ -109,8 +117,7 @@ input {
 }
 
 .main-nav .active,
-.main-nav a:hover,
-.search-form button:hover {
+.main-nav a:hover {
   background-color: #051c33;
 }
 
@@ -200,6 +207,7 @@ input {
     width: 100px;
   }
 }
+
 @media screen and (min-width: 800px) {
   .forkongithub {
     position: fixed;
@@ -211,6 +219,7 @@ input {
     height: 200px;
     z-index: 9999;
   }
+
   .forkongithub a {
     width: 200px;
     position: absolute;
