@@ -11,8 +11,12 @@ class App extends Component {
   handleSubmit = (e, history, searchInput) => {
     e.preventDefault();
     e.currentTarget.reset();
-    let url = `/search/${searchInput}`;
-    history.push(url);
+    if(searchInput){
+      let url = `/search/${searchInput}`;
+      history.push(url);
+    } else {
+      alert("Enter search term to continue")
+    }
   };
 
   render() {
