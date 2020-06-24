@@ -44,6 +44,10 @@ Create a config.js file in api folder inside src folders. In config.js file writ
 
 **2. Search functionality added to search photos from API.**
 
+### Coming Soon
+
+- [ ] Cypress E2E Tests
+
 ### Contributing
 
 Everyone is welcomed to contribute to this project. You can contribute either by submitting bugs or suggesting improvements by opening an issue on GitHub. Please see the [CONTRIBUTING](CONTRIBUTING.md) guidelines for more information.
