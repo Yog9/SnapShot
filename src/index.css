@@ -121,6 +121,10 @@ input {
   background-color: #051c33;
 }
 
+.photo-container {
+  margin-bottom: 50px;
+}
+
 .photo-container ul {
   display: flex;
   flex-flow: row wrap;
@@ -161,6 +165,15 @@ input {
   animation: spin 2s linear infinite;
   margin-left: auto;
   margin-right: auto;
+}
+
+.load-more {
+  background-color: #051c33;
+  color: white;
+  padding: 5px 25px;
+  border-radius: 3px;
+  cursor: pointer;
+  display: inline-block;
 }
 
 @keyframes spin {
