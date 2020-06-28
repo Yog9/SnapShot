@@ -4,7 +4,7 @@ import Gallery from "./Gallery";
 import Loader from "./Loader";
 
 const Container = ({ searchTerm }) => {
-  const { images, loading, page, runSearch } = useContext(PhotoContext);
+  const { images, loading, runSearch } = useContext(PhotoContext);
   let [currentPage, setCurrentPage] = useState(1);
   
   useEffect(() => {

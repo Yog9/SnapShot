@@ -23,7 +23,7 @@ const Gallery = props => {
     <div>
       <ul>{images}</ul>
       {noImages}
-      <a className="load-more" onClick={props.loadMore}>Load More</a>
+      <button className="load-more" onClick={props.loadMore }>Load More</button>
     </div>
   );
 };
