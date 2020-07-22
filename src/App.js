@@ -18,7 +18,7 @@ class App extends Component {
   render() {
     return (
       <PhotoContextProvider>
-        <BrowserRouter >
+        <BrowserRouter>
           <div className="container">
             <Route
               render={props => (
@@ -45,7 +45,7 @@ class App extends Component {
               <Route
                 path="/search/:searchInput"
                 render={props => (
-                  <Search searchTerm={props.match.paratms.searchInput} />
+                  <Search searchTerm={props.match.params.searchInput} />
                 )}
               />
               <Route component={NotFound} />
