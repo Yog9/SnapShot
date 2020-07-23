@@ -2065,6 +2065,14 @@ aws4@^1.8.0:
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.9.1.tgz#7e33d8f7d449b3f673cd72deb9abdc552dbe528e"
   integrity sha512-wMHVg2EOHaMRxbzgFJ9gtjOOCrI80OHLG14rxi28XwOW8ux6IiEbRCGGGqCtdAIg4FQCbW20k9RsT4y3gJlFug==
 
+axios-cache-adapter@^2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/axios-cache-adapter/-/axios-cache-adapter-2.5.0.tgz#e68be61e8c1cd7f31e4e7cfcbfd0435404ae67ef"
+  integrity sha512-YcMPdMoqmSLoZx7A5YD/PdYGuX6/Y9M2tHBhaIXvXrPeGgNnbW7nb3+uArWlT53WGHLfclnu2voMmS7jGXVg6A==
+  dependencies:
+    cache-control-esm "1.0.0"
+    lodash "^4.17.11"
+
 axios@^0.19.2:
   version "0.19.2"
   resolved "https://registry.yarnpkg.com/axios/-/axios-0.19.2.tgz#3ea36c5d8818d0d5f8a8a97a6d36b86cdc00cb27"
@@ -2549,6 +2557,11 @@ cache-base@^1.0.1:
     to-object-path "^0.3.0"
     union-value "^1.0.0"
     unset-value "^1.0.0"
+
+cache-control-esm@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/cache-control-esm/-/cache-control-esm-1.0.0.tgz#417647ecf1837a5e74155f55d5a4ae32a84e2581"
+  integrity sha512-Fa3UV4+eIk4EOih8FTV6EEsVKO0W5XWtNs6FC3InTfVz+EjurjPfDXY5wZDo/lxjDxg5RjNcurLyxEJBcEUx9g==
 
 call-me-maybe@^1.0.1:
   version "1.0.1"
