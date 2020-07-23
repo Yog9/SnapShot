@@ -3,6 +3,9 @@ import axios from "axios";
 import { apiKey } from "../api/config";
 
 
+
+
+
 const Image = ({ url, title, id }) => (
     <li>
     <img src={url} alt={title} onClick={() => 
@@ -12,10 +15,11 @@ const Image = ({ url, title, id }) => (
       `https://api.flickr.com/services/rest/?method=flickr.photos.geo.getLocation&api_key=${apiKey}&photo_id=${id}&per_page=12&format=json&nojsoncallback=1`
     )
     .then(response => {
-
-      console.log('Latitude', response.data.photo.location.latitude)
-      console.log('longitude', response.data.photo.location.longitude)
+      var link = `http://maps.google.com/maps?q=${response.data.photo.location.latitude},${response.data.photo.location.longitude}`
+      var win = window.open(link, "_blank");
+      win.focus();
     })
+
     .catch(error => {
       console.log(
         "Encountered an error with fetching and parsing data",
@@ -24,7 +28,7 @@ const Image = ({ url, title, id }) => (
     });
     }}
     }/>
-
+  <div id="popup"></div>
   </li>
 );
 
