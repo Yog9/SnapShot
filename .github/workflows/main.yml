@@ -34,4 +34,4 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
           repository: steveozo/snapshot-frontend
-          tags: ${{ steps.vars.outputs.short_ref }}-${GITHUB_RUN_NUMBER}
+          tags: ${{ steps.vars.outputs.branch_name }}-${{ GITHUB_RUN_NUMBER }}
