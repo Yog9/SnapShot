@@ -4,7 +4,7 @@ name: CI
 
 jobs:
   test:
-    name: Coverage
+    name: UnitTests
     runs-on: ubuntu-latest
     strategy:
       matrix:
