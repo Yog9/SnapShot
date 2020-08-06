@@ -47,6 +47,7 @@ jobs:
           heroku_app_name: "handytec-dev" #Must be unique in Heroku
           heroku_email: "stevemochuk@gmail.com"
           usedocker: true
+          healthcheck: "https://handytec-dev.herokuapp.com/"
   deploy-to-test:
     runs-on: ubuntu-latest
     needs: test
@@ -59,6 +60,7 @@ jobs:
           heroku_app_name: "handytec-test" #Must be unique in Heroku
           heroku_email: "stevemochuk@gmail.com"
           usedocker: true
+          healthcheck: "https://handytec-test.herokuapp.com/"
   deploy-to-prod:
     runs-on: ubuntu-latest
     needs: test
@@ -71,6 +73,7 @@ jobs:
           heroku_app_name: "handytec-prod" #Must be unique in Heroku
           heroku_email: "stevemochuk@gmail.com"
           usedocker: true
+          healthcheck: "https://handytec-prod.herokuapp.com/"
 
   tag-prod-version:
     runs-on: ubuntu-latest
