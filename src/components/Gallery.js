@@ -1,30 +1,37 @@
 import React from "react";
 import NoImages from "./NoImages";
 import Image from "./Image";
-const Gallery = props => {
-  const results = props.data;
-  let images;
-  let noImages;
-  // map variables to each item in fetched image array and return image component
-  if (results.length > 0) {
-    images = results.map(image => {
-      let farm = image.farm;
-      let server = image.server;
-      let id = image.id;
-      let secret = image.secret;
-      let title = image.title;
-      let url = `https://farm${farm}.staticflickr.com/${server}/${id}_${secret}_m.jpg`;
-      return <Image url={url} key={id} alt={title} />;
-    });
-  } else {
-    noImages = <NoImages />; // return 'not found' component if no images fetched
-  }
-  return (
-    <div>
-      <ul>{images}</ul>
-      {noImages}
-    </div>
-  );
-};
+import ReactTooltip from "react-tooltip";
+import MapPopover from "./MapPopover";
+
+/*
+  Decided to use ReactTooltip as the bundle size is relatively small:
+   26.8 kB MINIFIED
+   And the API was very developer-friendly.
+   It suited my needs for the new feature.
+*/
+
+const displayImages = (images) =>
+  images.map(({ farm, server, id, secret, title, latitude, longitude }) => {
+    const url = `https://farm${farm}.staticflickr.com/${server}/${id}_${secret}_m.jpg`;
+    return (
+      <>
+        <a data-tip data-for={id}>
+          <Image url={url} key={id} alt={title} />
+        </a>
+        <ReactTooltip id={id} type="light">
+          <span>{title}</span>
+          <MapPopover coordinates={[longitude, latitude]} />
+        </ReactTooltip>
+      </>
+    );
+  });
+
+const Gallery = ({ data }) => (
+  <div>
+    <ul>{data.length > 0 && displayImages(data)}</ul>
+    {!data.length && <NoImages />}
+  </div>
+);
 
 export default Gallery;
