@@ -2,7 +2,7 @@ import React from "react";
 import NoImages from "./NoImages";
 import Image from "./Image";
 import ReactTooltip from "react-tooltip";
-import MapPopoever from "./MapPopover";
+import MapPopover from "./MapPopover";
 
 /*
   Decided to use ReactTooltip as the bundle size is relatively small:
@@ -21,7 +21,7 @@ const displayImages = (images) =>
         </a>
         <ReactTooltip id={id} type="light">
           <span>{title}</span>
-          <MapPopoever coordinates={[longitude, latitude]} />
+          <MapPopover coordinates={[longitude, latitude]} />
         </ReactTooltip>
       </>
     );
