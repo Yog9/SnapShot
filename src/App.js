@@ -20,32 +20,45 @@ class App extends Component {
       <PhotoContextProvider>
         <HashRouter basename="/SnapScout">
           <div className="container">
-            <Route
-              render={props => (
-                <Header
-                  handleSubmit={this.handleSubmit}
-                  history={props.history}
-                />
-              )}
-            />
+            <Route 
+              render={props => ( <Header 
+              handleSubmit={this.handleSubmit}
+              history={props.history}
+            /> )} />
             <Switch>
               <Route
                 exact
                 path="/"
-                render={() => <Redirect to="/mountain" />}
+                render={() => <Redirect to="/all" />}
               />
+							{/* Add your new topic here */}
 
+              <Route 
+                path="/all" 
+                render={() => <Item 
+                  searchTerm="all" 
+                />} />
               <Route
-                path="/mountain"
-                render={() => <Item searchTerm="mountain" />}
-              />
-              <Route path="/beach" render={() => <Item searchTerm="beach" />} />
-              <Route path="/bird" render={() => <Item searchTerm="bird" />} />
-              <Route path="/food" render={() => <Item searchTerm="food" />} />
+                path="/car"
+                render={() => <Item 
+                  searchTerm="car" 
+                />} />
+              <Route 
+                path="/animals" 
+                render={() => <Item 
+                  searchTerm="animals" />} />
+              <Route 
+                path="/bird" 
+                render={() => <Item 
+                  searchTerm="bird" />} />
+              <Route 
+                path="/food" 
+                render={() => <Item 
+                  searchTerm="food" />} />
               <Route
                 path="/search/:searchInput"
-                render={props => (
-                  <Search searchTerm={props.match.params.searchInput} />
+                render={props => ( <Search 
+                  searchTerm={props.match.params.searchInput} />
                 )}
               />
               <Route component={NotFound} />
