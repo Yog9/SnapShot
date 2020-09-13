@@ -4,9 +4,9 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![HitCount](http://hits.dwyl.com/Yog9/SnapShot.svg)](http://hits.dwyl.com/Yog9/SnapShot)
 
-[Demo of Snap Shot](https://yog9.github.io/SnapShot/)
+[Demo of Snap Shot]
 
-![](/snapscout.png)
+<img align="center" alt="kishore007k.com" width="800px" src="./SnapShot.gif" />
 
 ### Summary
 
