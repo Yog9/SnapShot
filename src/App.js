@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import PhotoContextProvider from "./context/PhotoContext";
-import { HashRouter, Route, Switch, Redirect } from "react-router-dom";
-import Header from "./components/Header";
-import Item from "./components/Item";
-import Search from "./components/Search";
-import NotFound from "./components/NotFound";
+import React, { Component } from 'react';
+import PhotoContextProvider from './context/PhotoContext';
+import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
+import Header from './components/Header';
+import Item from './components/Item';
+import Search from './components/Search';
+import NotFound from './components/NotFound';
 
 class App extends Component {
   // Prevent page reload, clear input, set URL and push history on submit
@@ -21,7 +21,7 @@ class App extends Component {
         <HashRouter basename="/SnapScout">
           <div className="container">
             <Route
-              render={props => (
+              render={(props) => (
                 <Header
                   handleSubmit={this.handleSubmit}
                   history={props.history}
@@ -34,7 +34,6 @@ class App extends Component {
                 path="/"
                 render={() => <Redirect to="/mountain" />}
               />
-
               <Route
                 path="/mountain"
                 render={() => <Item searchTerm="mountain" />}
@@ -44,7 +43,7 @@ class App extends Component {
               <Route path="/food" render={() => <Item searchTerm="food" />} />
               <Route
                 path="/search/:searchInput"
-                render={props => (
+                render={(props) => (
                   <Search searchTerm={props.match.params.searchInput} />
                 )}
               />
