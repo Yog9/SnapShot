@@ -25,7 +25,9 @@ const Form = ({ handleSubmit, history }) => {
       />
       <button
         type="submit"
-        className={`search-button ${searchEntry.trim() ? 'active' : null}`}
+        className={`search-button ${
+          searchEntry.trim() ? 'active' : 'inactive'
+        }`}
         disabled={!searchEntry.trim()}
       >
         <svg height="32" width="32">

@@ -1,6 +1,6 @@
 body {
   text-align: center;
-  font-family: "Josefin Sans", Helvetica, Arial, sans-serif;
+  font-family: 'Josefin Sans', Helvetica, Arial, sans-serif;
   color: #3f4850;
 }
 
@@ -25,7 +25,7 @@ body {
 
 .forkongithub a::before,
 .forkongithub a::after {
-  content: "";
+  content: '';
   width: 100%;
   display: block;
   position: absolute;
@@ -48,7 +48,7 @@ h2 {
 }
 
 h1 {
-  font-family: "Lobster", "Josefin Sans", Helvetica, Arial, sans-serif;
+  font-family: 'Lobster', 'Josefin Sans', Helvetica, Arial, sans-serif;
   font-size: 4em;
   color: #051c33;
 }
@@ -85,6 +85,10 @@ a {
   padding: 0px 15px;
   border-radius: 0 0.35em 0.35em 0;
   cursor: pointer;
+}
+
+.inactive {
+  background-color: #d7dbdf;
 }
 
 .active {
