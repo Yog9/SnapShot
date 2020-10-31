@@ -3,9 +3,8 @@ module.exports = {
     browser: true,
     es6: true,
   },
-  extends: [
-    'airbnb',
-  ],
+  parser: 'babel-eslint',
+  extends: ['airbnb', 'prettier', 'prettier/react'],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
@@ -13,13 +12,18 @@ module.exports = {
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
+      modules: true,
     },
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-  ],
+  plugins: ['react', 'prettier'],
   rules: {
+    'prettier/prettier': 'error',
+    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+    'react/forbid-prop-types': [0, { forbid: ['any'] }],
+    'react/prop-types': 0,
+    indent: ['error', 2],
+    quotes: ['error', 'single'],
   },
 };
