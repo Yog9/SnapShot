@@ -1,16 +1,21 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 const Form = ({ handleSubmit, history }) => {
-  const [searchEntry, setSearchEntry] = useState("");
+  const [searchEntry, setSearchEntry] = useState('');
+
   // update search text state
-  const updateSearchInput = e => {
+  const updateSearchInput = (e) => {
     setSearchEntry(e.target.value);
   };
+
+  const handleSubmitSearch = (e) => {
+    handleSubmit(e, history, searchEntry);
+    //resets
+    setSearchEntry('');
+  };
+
   return (
-    <form
-      className="search-form"
-      onSubmit={e => handleSubmit(e, history, searchEntry)}
-    >
+    <form className="search-form" onSubmit={(e) => handleSubmitSearch(e)}>
       <input
         type="text"
         name="search"
@@ -20,7 +25,9 @@ const Form = ({ handleSubmit, history }) => {
       />
       <button
         type="submit"
-        className={`search-button ${searchEntry.trim() ? "active" : null}`}
+        className={`search-button ${
+          searchEntry.trim() ? 'active' : 'inactive'
+        }`}
         disabled={!searchEntry.trim()}
       >
         <svg height="32" width="32">
