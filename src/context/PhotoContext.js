@@ -8,15 +8,28 @@ const PhotoContextProvider = (props) => {
   const [loading, setLoading] = useState(true);
 
   const runSearch = (query) => {
-    console.log('query', query);
+    const sessionData = sessionStorage.getItem(query);
+
+    if (sessionData) {
+      setImages(JSON.parse(sessionData));
+      setLoading(false);
+    } else {
+      callApi(query);
+    }
+  };
+
+  const callApi = (query) => {
     axios
       .get(
         `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&per_page=24&format=json&nojsoncallback=1`,
       )
       .then((response) => {
         setImages(response.data.photos.photo);
+        sessionStorage.setItem(
+          query,
+          JSON.stringify(response.data.photos.photo),
+        );
         setLoading(false);
-        console.log('response', response);
       })
       .catch((error) => {
         console.log(
@@ -25,6 +38,7 @@ const PhotoContextProvider = (props) => {
         );
       });
   };
+
   return (
     <PhotoContext.Provider value={{ images, loading, runSearch }}>
       {console.log('props.children', props.children)}
