@@ -2,10 +2,17 @@ import React, { useState } from "react";
 
 const Form = ({ handleSubmit, history }) => {
   const [searchEntry, setSearchEntry] = useState("");
+  const [prevLocation, setPrevLocation] = useState("");
   // update search text state
   const updateSearchInput = e => {
     setSearchEntry(e.target.value);
   };
+
+  if (prevLocation !== history.location.pathname) {
+    setPrevLocation(history.location.pathname);
+    setSearchEntry("");
+  }
+
   return (
     <form
       className="search-form"
