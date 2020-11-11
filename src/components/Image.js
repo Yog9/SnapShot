@@ -1,7 +1,7 @@
 import React from "react";
 
 const Image = ({ url, title }) => (
-  <li>
+  <li data-for="tooltip_map" data-tip={url}>
     <img src={url} alt={title} />
   </li>
 );

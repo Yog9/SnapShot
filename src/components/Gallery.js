@@ -1,6 +1,8 @@
 import React from "react";
 import NoImages from "./NoImages";
 import Image from "./Image";
+import ReactTooltip from "react-tooltip";
+import Map from "./Map";
 const Gallery = props => {
   const results = props.data;
   let images;
@@ -23,6 +25,11 @@ const Gallery = props => {
     <div>
       <ul>{images}</ul>
       {noImages}
+      <ReactTooltip 
+        id='tooltip_map' 
+        getContent={(dataTip) => (
+          <Map center={{ lat: 52.6376, lng: -1.135171 }} zoom={13} markerCoords={{ lat: 52.6376, lng: -1.135171 }} />
+        )} />
     </div>
   );
 };
