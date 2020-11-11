@@ -5,8 +5,8 @@ import { googleMapKey } from "../api/config";
 
 const Map = ({ center, zoom, markerCoords }) => {
   const MAP_OPTIONS = {
-    zoomControl: false,
-    scrollwheel: false,
+    zoomControl: true,
+    scrollwheel: true,
     fullscreenControl: false
   };
   return (
