@@ -14,7 +14,7 @@ const PhotoContextProvider = props => {
     } else {
       axios
       .get(
-        `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&per_page=24&format=json&nojsoncallback=1`
+        `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&per_page=24&format=json&nojsoncallback=1&has_geo=1&extras=geo`
       )
       .then(response => {
         setImages(response.data.photos.photo);

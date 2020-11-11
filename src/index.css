@@ -164,8 +164,8 @@ input {
 }
 
 .map {
-  height: 120px;
-  width: 120px;
+  height: 220px;
+  width: 220px;
 }
 
 .map .map__marker {
