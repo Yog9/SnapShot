@@ -7,47 +7,39 @@ import Search from "./components/Search";
 import NotFound from "./components/NotFound";
 
 class App extends Component {
-  // Prevent page reload, clear input, set URL and push history on submit
-  handleSubmit = (e, history, searchInput) => {
-    e.preventDefault();
-    e.currentTarget.reset();
-    let url = `/search/${searchInput}`;
-    history.push(url);
-  };
+
 
   render() {
     return (
       <PhotoContextProvider>
         <HashRouter basename="/SnapScout">
           <div className="container">
-            <Route
-              render={props => (
-                <Header
-                  handleSubmit={this.handleSubmit}
-                  history={props.history}
-                />
-              )}
-            />
+            <Route>
+              <Header />
+            </Route>
             <Switch>
               <Route
                 exact
-                path="/"
-                render={() => <Redirect to="/mountain" />}
-              />
-
+                path="/">
+                <Redirect to="/mountain" />
+              </Route>
               <Route
-                path="/mountain"
-                render={() => <Item searchTerm="mountain" />}
-              />
-              <Route path="/beach" render={() => <Item searchTerm="beach" />} />
-              <Route path="/bird" render={() => <Item searchTerm="bird" />} />
-              <Route path="/food" render={() => <Item searchTerm="food" />} />
+                path="/mountain">
+                <Item searchTerm="mountain" />
+              </Route>
+              <Route path="/beach">
+                <Item searchTerm="beach" />
+              </Route>
+              <Route path="/bird">
+                <Item searchTerm="bird" />
+              </Route>
+              <Route path="/food"  >
+                <Item searchTerm="food" />
+              </Route>
               <Route
-                path="/search/:searchInput"
-                render={props => (
-                  <Search searchTerm={props.match.params.searchInput} />
-                )}
-              />
+                path="/search/:searchInput">
+                <Search />
+              </Route>
               <Route component={NotFound} />
             </Switch>
           </div>

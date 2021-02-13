@@ -1,15 +1,26 @@
-import React, { useState } from "react";
 
-const Form = ({ handleSubmit, history }) => {
+import React, { useState } from "react";
+import { useHistory } from 'react-router-dom'
+
+const Form = () => {
   const [searchEntry, setSearchEntry] = useState("");
+  const history = useHistory()
+
   // update search text state
   const updateSearchInput = e => {
     setSearchEntry(e.target.value);
   };
+    // Prevent page reload, clear input, set URL and push history on submit
+  const  handleSubmit = (e) => {
+      e.preventDefault();
+      e.currentTarget.reset();
+      let url = `/search/${searchEntry}`;
+      history.push(url);
+    };
   return (
     <form
       className="search-form"
-      onSubmit={e => handleSubmit(e, history, searchEntry)}
+      onSubmit={handleSubmit}
     >
       <input
         type="text"
