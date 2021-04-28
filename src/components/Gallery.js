@@ -23,8 +23,8 @@ const Gallery = props => {
     <div>
       <ul>{images}</ul>
       {noImages}
+      <button className="load-more" onClick={props.loadMore}>Load More</button>
     </div>
   );
 };
-
 export default Gallery;
