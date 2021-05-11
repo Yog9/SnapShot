@@ -7,14 +7,17 @@ const PhotoContextProvider = props => {
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(true);
   const runSearch = query => {
-    axios
+
+    const getImages = () => {
+      axios
       .get(
         `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&per_page=24&format=json&nojsoncallback=1`
       )
       .then(response => {
         setImages(response.data.photos.photo);
         setLoading(false);
-        props.setPrevSearches(query, images)
+        // save all searches to state in App.js
+        props.setPrevSearches(query, response.data.photos.photo)
       })
       .catch(error => {
         console.log(
@@ -22,6 +25,29 @@ const PhotoContextProvider = props => {
           error
         );
       });
+    }
+
+    // If there are no previous searches, send a call to the API
+    // If there are previous searches, filter through them to see if this query has been used before
+    // If it has been used before, return the array of images from the state
+    if(props.prevSearches.length) {
+      let resultToShow = {}
+      props.prevSearches.forEach(element => {
+          let key = Object.keys(element)
+          if (key == query){
+            resultToShow = element
+          }
+      });
+      if (Object.keys(resultToShow).length !== 0) {
+        let photos = Object.values(resultToShow)[0]
+        setImages(photos);
+        setLoading(false);
+      } else {
+        getImages()
+      }
+    } else {
+      getImages()
+    }
   };
  
   return (

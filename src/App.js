@@ -21,20 +21,16 @@ class App extends Component {
     history.push(url);
   };
 
+  // store API call results to state
   setPrevSearches = (searchTerm, results) =>{
-    console.log("Prev searches reached")
-    console.log("searchTerm", searchTerm)
-    console.log("results", results)
-    let search = { [searchTerm]: results}
-    console.log("search", search)
-    console.log("preSearches ", this.state.prevSearches)
+    let search = { [searchTerm]: results }
     var joined = this.state.prevSearches.concat(search);
     this.setState({ prevSearches: joined })
   }
 
   render() {
     return (
-      <PhotoContextProvider setPrevSearches={this.setPrevSearches}>
+      <PhotoContextProvider setPrevSearches={this.setPrevSearches} prevSearches={this.state.prevSearches}>
         <BrowserRouter>
           <div className="container">
             <Route
