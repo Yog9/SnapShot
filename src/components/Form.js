@@ -13,6 +13,7 @@ const Form = ({ handleSubmit, history }) => {
       onSubmit={e => {
         handleSubmit(e, history, searchEntry);
         setSearchEntry("")
+        console.log("history", history)
       }}
     >
       <input

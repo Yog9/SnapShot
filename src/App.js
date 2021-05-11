@@ -1,12 +1,18 @@
 import React, { Component } from "react";
 import PhotoContextProvider from "./context/PhotoContext";
-import { HashRouter, Route, Switch, Redirect } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import Header from "./components/Header";
 import Item from "./components/Item";
 import Search from "./components/Search";
 import NotFound from "./components/NotFound";
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+        prevSearches:[]
+    }
+}
   // Prevent page reload, clear input, set URL and push history on submit
   handleSubmit = (e, history, searchInput) => {
     e.preventDefault();
@@ -15,10 +21,21 @@ class App extends Component {
     history.push(url);
   };
 
+  setPrevSearches = (searchTerm, results) =>{
+    console.log("Prev searches reached")
+    console.log("searchTerm", searchTerm)
+    console.log("results", results)
+    let search = { [searchTerm]: results}
+    console.log("search", search)
+    console.log("preSearches ", this.state.prevSearches)
+    var joined = this.state.prevSearches.concat(search);
+    this.setState({ prevSearches: joined })
+  }
+
   render() {
     return (
-      <PhotoContextProvider>
-        <HashRouter basename="/">
+      <PhotoContextProvider setPrevSearches={this.setPrevSearches}>
+        <BrowserRouter>
           <div className="container">
             <Route
               render={props => (
@@ -51,7 +68,7 @@ class App extends Component {
               <Route component={NotFound} />
             </Switch>
           </div>
-        </HashRouter>
+        </BrowserRouter>
       </PhotoContextProvider>
     );
   }

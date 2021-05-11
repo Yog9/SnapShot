@@ -14,6 +14,7 @@ const PhotoContextProvider = props => {
       .then(response => {
         setImages(response.data.photos.photo);
         setLoading(false);
+        props.setPrevSearches(query, images)
       })
       .catch(error => {
         console.log(
@@ -22,6 +23,7 @@ const PhotoContextProvider = props => {
         );
       });
   };
+ 
   return (
     <PhotoContext.Provider value={{ images, loading, runSearch }}>
       {props.children}
