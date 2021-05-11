@@ -1,6 +1,7 @@
 import React from "react";
 import NoImages from "./NoImages";
 import Image from "./Image";
+import Map from "./Map";
 const Gallery = props => {
   const results = props.data;
   let images;
@@ -20,9 +21,14 @@ const Gallery = props => {
     noImages = <NoImages />; // return 'not found' component if no images fetched
   }
   return (
-    <div>
-      <ul>{images}</ul>
-      {noImages}
+    <div className="photo-gallery">
+      <div className="photos">
+        <ul>{images}</ul>
+        {noImages}
+      </div>
+      <div className= "map-container">
+        <Map />
+      </div>
     </div>
   );
 };

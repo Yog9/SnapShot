@@ -31,7 +31,6 @@ const PhotoContextProvider = props => {
 
     const addLocation = async (images) => {
       console.log("images", images)
-      let filteredImages = []
       await images.forEach(image => {
         axios
         .get(
