@@ -21,7 +21,7 @@ const Gallery = props => {
       let url = `https://farm${farm}.staticflickr.com/${server}/${id}_${secret}_m.jpg`;
       console.log("id", id)
       console.log("photoId", photoId)
-      return <Image url={url} key={id} alt={title} photoId={photoId} id={id}/>;
+      return <Image url={url} key={id} alt={title} photoId={photoId} id={id} setId={setId}/>;
     });
   } else {
     noImages = <NoImages />; // return 'not found' component if no images fetched
@@ -33,7 +33,7 @@ const Gallery = props => {
         {noImages}
       </div>
       <div className= "map-container">
-        <Map images={results} setId={setId}/>  
+        <Map images={results} setId={setId} photoId={photoId}/>  
       </div>
     </div>
   );

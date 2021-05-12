@@ -12,8 +12,6 @@ const higlightedStyle = {
     height: '34px',
 }
 
-
-
 class MapMarker extends PureComponent {
     constructor(props){
         super(props)
@@ -46,7 +44,7 @@ class MapMarker extends PureComponent {
         console.log("long", this.props.lng)
         return (
             <div onClick={() => this.onMarkerClick(this.props.id)} onMouseOver={() => this.setHover(this.props.id)} onMouseLeave={this.setHoverOff}>
-                {this.state.hover ? <div style ={higlightedStyle} /> : <div style ={markerStyle} /> }
+                {this.state.hover || this.props.photoId == this.props.id ? <div style ={higlightedStyle} /> : <div style ={markerStyle} /> }
             </div>
             
         )

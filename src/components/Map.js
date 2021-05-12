@@ -18,7 +18,7 @@ class SimpleMap extends PureComponent {
 
   render() {
     console.log("map props", this.props)
-    let { images, setId } = this.props
+    let { images, setId, photoId } = this.props
     console.log("setId", setId)
     return (
       // Important! Always set the container height explicitly
@@ -37,6 +37,7 @@ class SimpleMap extends PureComponent {
               text="My Marker"
               key={image.id}
               setId={setId}
+              photoId={photoId}
             />
         )) : null}
           
