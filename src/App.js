@@ -47,11 +47,13 @@ class App extends Component {
                 path="/"
                 render={() => <Redirect to="/mountain" />}
               />
-
               <Route
-                path="/mountain"
-                render={() => <Item searchTerm="mountain" />}
+                exact
+                path="/SnapShot"
+                render={() => <Redirect to="/mountain" />}
               />
+
+              <Route path="/mountain" render={() => <Item searchTerm="mountain" />} />
               <Route path="/beach" render={() => <Item searchTerm="beach" />} />
               <Route path="/bird" render={() => <Item searchTerm="bird" />} />
               <Route path="/food" render={() => <Item searchTerm="food" />} />

@@ -6,6 +6,7 @@ export const PhotoContext = createContext();
 const PhotoContextProvider = props => {
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(true);
+  
   const runSearch = query => {
 
     const getImages = () => {
@@ -14,11 +15,6 @@ const PhotoContextProvider = props => {
         `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&has_geo=1&per_page=24&format=json&nojsoncallback=1`
       )
       .then(response => {
-        setImages(response.data.photos.photo);
-        console.log("images", images)
-        setLoading(false);
-        // save all searches to state in App.js
-        props.setPrevSearches(query, response.data.photos.photo)
         addLocation(response.data.photos.photo)
       })
       .catch(error => {
@@ -30,37 +26,52 @@ const PhotoContextProvider = props => {
     }
 
     const addLocation = async (images) => {
-      console.log("images", images)
-      await images.forEach(image => {
+      let newImages = await getLocation(images)
+      console.log("newImages", newImages)
+      setLoading(false);
+      // save all searches to state in App.js
+      props.setPrevSearches(query, newImages)
+      setImages(newImages)
+      
+    }
+
+    const getLocation = (images)=>{
+      images.forEach(image =>
         axios
         .get(
           `https://api.flickr.com/services/rest/?method=flickr.photos.geo.getLocation&api_key=${apiKey}&photo_id=${image.id}&format=json&nojsoncallback=1`
         ).then(response => {
-          console.log("response", response.data.photo.location)
           image.location= response.data.photo.location
         })
-      })
+      )
+      return images
     }
 
     // If there are no previous searches, send a call to the API
     // If there are previous searches, filter through them to see if this query has been used before
     // If it has been used before, return the array of images from the state
     if(props.prevSearches.length) {
+      console.log("prev searches")
       let resultToShow = {}
       props.prevSearches.forEach(element => {
           let key = Object.keys(element)
+          console.log("key", key)
+          console.log("query", query)
           if (key == query){
             resultToShow = element
           }
       });
       if (Object.keys(resultToShow).length !== 0) {
+        console.log("prev searches with same key")
         let photos = Object.values(resultToShow)[0]
         setImages(photos);
         setLoading(false);
       } else {
+        console.log("no prev searches with same key")
         getImages()
       }
     } else {
+      console.log("no prev searches")
       getImages()
     }
   };

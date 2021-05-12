@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import NoImages from "./NoImages";
 import Image from "./Image";
 import Map from "./Map";
+
+
+
 const Gallery = props => {
+  let [photoId, setId] = useState('');
   const results = props.data;
   let images;
   let noImages;
@@ -15,7 +19,9 @@ const Gallery = props => {
       let secret = image.secret;
       let title = image.title;
       let url = `https://farm${farm}.staticflickr.com/${server}/${id}_${secret}_m.jpg`;
-      return <Image url={url} key={id} alt={title} />;
+      console.log("id", id)
+      console.log("photoId", photoId)
+      return <Image url={url} key={id} alt={title} photoId={photoId} id={id}/>;
     });
   } else {
     noImages = <NoImages />; // return 'not found' component if no images fetched
@@ -27,7 +33,7 @@ const Gallery = props => {
         {noImages}
       </div>
       <div className= "map-container">
-        <Map />
+        <Map images={results} setId={setId}/>  
       </div>
     </div>
   );

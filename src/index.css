@@ -130,10 +130,14 @@ input {
 }
 
 .photo-container ul li {
-  width: 220px;
+  width: 215px;
   height: 165px;
   overflow: hidden;
   margin-bottom: 15px;
+}
+
+.highlight-img {
+  border: 4px solid orange;
 }
 
 .photo-container ul img {
@@ -242,8 +246,11 @@ input {
 
 .photo-gallery .photos {
   width: 50%;
+  height: 100vh;
+  overflow-y: scroll;
 }
 
 .map-container{
   width: 50%;
+  padding: 20px;
 }

@@ -1,32 +1,45 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import GoogleMapReact from 'google-map-react';
+import { mapsAPI } from "../api/config";
+import MapMarker from './MapMarker'
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
-const mapAPI = process.env.REACT_APP_MAPS_API
 
-class SimpleMap extends Component {
+class SimpleMap extends PureComponent {
+    
   static defaultProps = {
     center: {
-      lat: 59.95,
-      lng: 30.33
+      lat: 26.3351,
+      lng: 17.2283
     },
-    zoom: 11
+    zoom: 0
   };
 
+ 
+
   render() {
+    console.log("map props", this.props)
+    let { images, setId } = this.props
+    console.log("setId", setId)
     return (
       // Important! Always set the container height explicitly
       <div style={{ height: '100vh', width: '100%' }}>
         <GoogleMapReact
-          bootstrapURLKeys={{ key: mapAPI }}
+          bootstrapURLKeys={{ key: mapsAPI }}
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
+          yesIWantToUseGoogleMapApiInternals={true}
         >
-          <AnyReactComponent
-            lat={59.955413}
-            lng={30.337844}
-            text="My Marker"
-          />
+        {images.length > 0 ? images.map((image, index) =>(
+            <MapMarker
+              lat={image.location ? image.location.latitude : null}
+              lng={image.location ? image.location.longitude : null}
+              id={image.id}
+              text="My Marker"
+              key={image.id}
+              setId={setId}
+            />
+        )) : null}
+          
         </GoogleMapReact>
       </div>
     );
