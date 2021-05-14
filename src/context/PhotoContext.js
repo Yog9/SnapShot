@@ -32,7 +32,6 @@ const PhotoContextProvider = props => {
       // save all searches to state in App.js
       props.setPrevSearches(query, newImages)
       setImages(newImages)
-      
     }
 
     const getLocation = (images)=>{

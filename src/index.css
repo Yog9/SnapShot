@@ -134,6 +134,7 @@ input {
   height: 165px;
   overflow: hidden;
   margin-bottom: 15px;
+  cursor: pointer;
 }
 
 .highlight-img {
@@ -248,6 +249,7 @@ input {
   width: 50%;
   height: 100vh;
   overflow-y: scroll;
+  position: relative;
 }
 
 .map-container{

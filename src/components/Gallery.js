@@ -19,8 +19,7 @@ const Gallery = props => {
       let secret = image.secret;
       let title = image.title;
       let url = `https://farm${farm}.staticflickr.com/${server}/${id}_${secret}_m.jpg`;
-      console.log("id", id)
-      console.log("photoId", photoId)
+      
       return <Image url={url} key={id} alt={title} photoId={photoId} id={id} setId={setId}/>;
     });
   } else {
@@ -28,6 +27,7 @@ const Gallery = props => {
   }
   return (
     <div className="photo-gallery">
+      
       <div className="photos">
         <ul>{images}</ul>
         {noImages}

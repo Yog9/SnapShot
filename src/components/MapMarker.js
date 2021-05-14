@@ -22,10 +22,20 @@ class MapMarker extends PureComponent {
         }
       }
 
+
+    componentDidUpdate = () => {
+        const { id, photoId, lat, lng, setCenter } = this.props
+        if( id == photoId ){
+            console.log("id equal")
+            setCenter(lat, lng)
+        }
+    }
+
     onMarkerClick = (id) => {
      console.log("photo", id, "clicked")
      this.props.setId(id)
     }
+
     setHover = (id) => {
         console.log("photo", id)
         this.props.setId(id)
@@ -33,18 +43,20 @@ class MapMarker extends PureComponent {
             hover:true
         })
     }
+
     setHoverOff = () => {
         this.setState({
             hover:false
         })
     }
+
+    
     
     render() {
-        console.log("lat", this.props.lat)
-        console.log("long", this.props.lng)
+        const { id, photoId } = this.props
         return (
-            <div onClick={() => this.onMarkerClick(this.props.id)} onMouseOver={() => this.setHover(this.props.id)} onMouseLeave={this.setHoverOff}>
-                {this.state.hover || this.props.photoId == this.props.id ? <div style ={higlightedStyle} /> : <div style ={markerStyle} /> }
+            <div onClick={() => this.onMarkerClick(id)} onMouseOver={() => this.setHover(id)} onMouseLeave={this.setHoverOff}>
+                {this.state.hover || photoId == id ? <div style ={higlightedStyle} /> : <div style ={markerStyle} /> }
             </div>
             
         )
