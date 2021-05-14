@@ -6,10 +6,14 @@ const Form = ({ handleSubmit, history }) => {
   const updateSearchInput = e => {
     setSearchEntry(e.target.value);
   };
+
   return (
     <form
       className="search-form"
-      onSubmit={e => handleSubmit(e, history, searchEntry)}
+      onSubmit={e => {
+        handleSubmit(e, history, searchEntry);
+        setSearchEntry("")
+      }}
     >
       <input
         type="text"

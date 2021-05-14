@@ -1,8 +1,8 @@
 import React from "react";
 
-const Image = ({ url, title }) => (
-  <li>
-    <img src={url} alt={title} />
+const Image = ({ url, title, photoId, id, setId}) => (
+  <li className={id == photoId ? 'highlight-img' : ''} onMouseOver={() => setId(id)}>
+    <img src={url} alt={title}/>
   </li>
 );
 

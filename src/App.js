@@ -1,12 +1,18 @@
 import React, { Component } from "react";
 import PhotoContextProvider from "./context/PhotoContext";
-import { HashRouter, Route, Switch, Redirect } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import Header from "./components/Header";
 import Item from "./components/Item";
 import Search from "./components/Search";
 import NotFound from "./components/NotFound";
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+        prevSearches:[]
+    }
+}
   // Prevent page reload, clear input, set URL and push history on submit
   handleSubmit = (e, history, searchInput) => {
     e.preventDefault();
@@ -15,10 +21,17 @@ class App extends Component {
     history.push(url);
   };
 
+  // store API call results to state
+  setPrevSearches = (searchTerm, results) =>{
+    let search = { [searchTerm]: results }
+    var joined = this.state.prevSearches.concat(search);
+    this.setState({ prevSearches: joined })
+  }
+
   render() {
     return (
-      <PhotoContextProvider>
-        <HashRouter basename="/SnapScout">
+      <PhotoContextProvider setPrevSearches={this.setPrevSearches} prevSearches={this.state.prevSearches}>
+        <BrowserRouter>
           <div className="container">
             <Route
               render={props => (
@@ -34,11 +47,13 @@ class App extends Component {
                 path="/"
                 render={() => <Redirect to="/mountain" />}
               />
-
               <Route
-                path="/mountain"
-                render={() => <Item searchTerm="mountain" />}
+                exact
+                path="/SnapShot"
+                render={() => <Redirect to="/mountain" />}
               />
+
+              <Route path="/mountain" render={() => <Item searchTerm="mountain" />} />
               <Route path="/beach" render={() => <Item searchTerm="beach" />} />
               <Route path="/bird" render={() => <Item searchTerm="bird" />} />
               <Route path="/food" render={() => <Item searchTerm="food" />} />
@@ -51,7 +66,7 @@ class App extends Component {
               <Route component={NotFound} />
             </Switch>
           </div>
-        </HashRouter>
+        </BrowserRouter>
       </PhotoContextProvider>
     );
   }

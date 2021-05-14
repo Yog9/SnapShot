@@ -130,10 +130,15 @@ input {
 }
 
 .photo-container ul li {
-  width: 220px;
+  width: 215px;
   height: 165px;
   overflow: hidden;
   margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.highlight-img {
+  border: 4px solid orange;
 }
 
 .photo-container ul img {
@@ -232,4 +237,22 @@ input {
     -o-transform: rotate(45deg);
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
   }
+}
+
+/* Photo Gallery */
+
+.photo-gallery{
+  display: flex;
+}
+
+.photo-gallery .photos {
+  width: 50%;
+  height: 100vh;
+  overflow-y: scroll;
+  position: relative;
+}
+
+.map-container{
+  width: 50%;
+  padding: 20px;
 }
