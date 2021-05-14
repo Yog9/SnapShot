@@ -33,6 +33,7 @@ const Gallery = props => {
         {noImages}
       </div>
       <div className= "map-container">
+        <div className="overlay"></div>
         <Map images={results} setId={setId} photoId={photoId}/>  
       </div>
     </div>

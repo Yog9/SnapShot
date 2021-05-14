@@ -15,29 +15,32 @@ const higlightedStyle = {
 class MapMarker extends PureComponent {
     constructor(props){
         super(props)
-    
         this.state = {
           hover: false,
           clicked: false
         }
       }
 
+    componentDidMount = () => {
+        const { lat, lng } = this.props
+        this.setState({
+            lat: lat,
+            lng: lng
+        })
+    }
 
     componentDidUpdate = () => {
         const { id, photoId, lat, lng, setCenter } = this.props
         if( id == photoId ){
-            console.log("id equal")
             setCenter(lat, lng)
         }
     }
 
     onMarkerClick = (id) => {
-     console.log("photo", id, "clicked")
      this.props.setId(id)
     }
 
     setHover = (id) => {
-        console.log("photo", id)
         this.props.setId(id)
         this.setState({
             hover:true

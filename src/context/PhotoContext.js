@@ -27,7 +27,6 @@ const PhotoContextProvider = props => {
 
     const addLocation = async (images) => {
       let newImages = await getLocation(images)
-      console.log("newImages", newImages)
       setLoading(false);
       // save all searches to state in App.js
       props.setPrevSearches(query, newImages)
@@ -50,27 +49,21 @@ const PhotoContextProvider = props => {
     // If there are previous searches, filter through them to see if this query has been used before
     // If it has been used before, return the array of images from the state
     if(props.prevSearches.length) {
-      console.log("prev searches")
       let resultToShow = {}
       props.prevSearches.forEach(element => {
           let key = Object.keys(element)
-          console.log("key", key)
-          console.log("query", query)
           if (key == query){
             resultToShow = element
           }
       });
       if (Object.keys(resultToShow).length !== 0) {
-        console.log("prev searches with same key")
         let photos = Object.values(resultToShow)[0]
         setImages(photos);
         setLoading(false);
       } else {
-        console.log("no prev searches with same key")
         getImages()
       }
     } else {
-      console.log("no prev searches")
       getImages()
     }
   };
