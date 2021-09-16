@@ -9,7 +9,8 @@ const Form = ({ handleSubmit, history }) => {
   return (
     <form
       className="search-form"
-      onSubmit={e => handleSubmit(e, history, searchEntry)}
+      onSubmit={e => {handleSubmit(e, history, searchEntry)
+        setSearchEntry("")}}
     >
       <input
         type="text"
