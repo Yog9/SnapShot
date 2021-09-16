@@ -45,7 +45,6 @@ class App extends Component {
               <Route
                 path="/search/:searchInput"
               />
-              <Route component={NotFound} />
             </Switch>
           </div>
         </HashRouter>
