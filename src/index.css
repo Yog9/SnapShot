@@ -163,6 +163,22 @@ input {
   margin-right: auto;
 }
 
+.imagePopupOverlay {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+  
+}
+
+.imagePopupModal {
+  background-color: red;
+  width: 500px;
+  height: 500px;
+  justify-content: center;
+  display: flex;
+}
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
