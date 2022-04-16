@@ -11,7 +11,7 @@ const ImagePopup = ({ show, data, closeModal }) => {
     >
       <div className="popUpContainer">
         <h2>{data ? data.title : ""}</h2>
-        <img src={data ? data.url : ""} className="popupImage" />
+        <img alt={data ? data.url : "Image unavailable"} src={data ? data.url : ""} className="popupImage" />
         <div className="buttonContainer">
           <div onClick={closeModal} className="buttonStyle">
             Close
