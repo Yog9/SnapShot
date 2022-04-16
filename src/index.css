@@ -163,12 +163,47 @@ input {
   margin-right: auto;
 }
 
+.popupImage {
+  padding: 60px 50px;
+  border: 5px;
+  height: 350px;
+}
+
+.buttonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.buttonContainer :hover {
+  opacity: 0.6;
+}
+
+.buttonStyle {
+  cursor: pointer;
+  background-color: #000;
+  color: white;
+  box-sizing: border-box;
+  padding: 5px 15px;
+  border-radius: 4px;
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+}
+
+.popUpContainer {
+  width: 100%;
+  min-height: 350px;
+  overflow: auto;
+}
+
 .imagePopupOverlay {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.8);
   width: 100%;
   height: 100%;
-  
 }
 
 .imagePopupModal {

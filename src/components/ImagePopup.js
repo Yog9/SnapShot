@@ -1,19 +1,25 @@
-import React from 'react';
-import Modal from 'react-modal';
-// import './imagePopup.scss';
+import React from "react";
+import Modal from "react-modal";
+import { commonModalStyles } from "./commonModalStyles";
 
-
-const ImagePopup = ({show}) => {
-    return (
-        <Modal 
-            className="imagePopupModal" 
-            isOpen={show}
-            overlayClassName="imagePopupOverlay"
-            shouldCloseOnOverlayClick
-        >
-            
-        </Modal>
-    )
-}
+const ImagePopup = ({ show, data, closeModal }) => {
+  return (
+    <Modal
+      isOpen={show}
+      style={commonModalStyles()}
+      onRequestClose={closeModal}
+    >
+      <div className="popUpContainer">
+        <h2>{data ? data.title : ""}</h2>
+        <img src={data ? data.url : ""} className="popupImage" />
+        <div className="buttonContainer">
+          <div onClick={closeModal} className="buttonStyle">
+            Close
+          </div>
+        </div>
+      </div>
+    </Modal>
+  );
+};
 
 export default ImagePopup;
