@@ -6,6 +6,8 @@ import {
   Route,
   Routes,
   Navigate,
+  useNavigate,
+  useParams,
 } from 'react-router-dom'
 
 import Header from './components/Header'
@@ -13,13 +15,31 @@ import Item from './components/Item'
 import Search from './components/Search'
 import NotFound from './components/NotFound'
 
+function withRouter(Component) {
+  return (props) => {
+    const navigate = useNavigate()
+    const params = useParams()
+    return (
+      <Component
+        {...props}
+        navigate={navigate}
+        params={params}
+        searchTerm={params.searchInput}
+      />
+    )
+  }
+}
+
+const Searching = withRouter(Search)
+const Headering = withRouter(Header)
+
 class App extends Component {
   // Prevent page reload, clear input, set URL and push history on submit
-  handleSubmit = (e, history, searchInput) => {
+  handleSubmit = (e, navigate, searchInput) => {
     e.preventDefault()
     e.currentTarget.reset()
-    let url = `/search/${searchInput}`
-    history.push(url)
+    const url = `/search/${searchInput}`
+    navigate(url)
   }
 
   render() {
@@ -27,32 +47,18 @@ class App extends Component {
       <PhotoContextProvider>
         <HashRouter basename="/SnapScout">
           <div className="container">
+            <Headering handleSubmit={this.handleSubmit} />
             <Routes>
-              {/* TODO: fix the pre-critetia */}
-              <Route
-                element={(props) => (
-                  <Header
-                    handleSubmit={this.handleSubmit}
-                    history={props.history}
-                  />
-                )}
-              />
               <Route path="/" element={<Navigate replace to="/mountain" />} />
-
               <Route
                 path="/mountain"
                 element={<Item searchTerm="mountain" />}
               />
-              {/*  <Route path="/beach" render={() => <Item searchTerm="beach" />} />
-              <Route path="/bird" render={() => <Item searchTerm="bird" />} />
-              <Route path="/food" render={() => <Item searchTerm="food" />} />
-              <Route
-                path="/search/:searchInput"
-                render={(props) => (
-                  <Search searchTerm={props.match.params.searchInput} />
-                )}
-              />
-              <Route component={NotFound} /> */}
+              <Route path="/beach" element={<Item searchTerm="beach" />} />
+              <Route path="/bird" element={<Item searchTerm="bird" />} />
+              <Route path="/food" element={<Item searchTerm="food" />} />
+              <Route path="/search/:searchInput" element={<Searching />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </div>
         </HashRouter>
