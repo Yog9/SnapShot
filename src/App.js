@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import PhotoContextProvider from './context/PhotoContext'
 import {
-  BrowserRouter,
   HashRouter,
   Route,
   Routes,
@@ -19,14 +18,7 @@ function withRouter(Component) {
   return (props) => {
     const navigate = useNavigate()
     const params = useParams()
-    return (
-      <Component
-        {...props}
-        navigate={navigate}
-        params={params}
-        searchTerm={params.searchInput}
-      />
-    )
+    return <Component {...props} navigate={navigate} params={params} />
   }
 }
 
@@ -57,7 +49,7 @@ class App extends Component {
               <Route path="/beach" element={<Item searchTerm="beach" />} />
               <Route path="/bird" element={<Item searchTerm="bird" />} />
               <Route path="/food" element={<Item searchTerm="food" />} />
-              <Route path="/search/:searchInput" element={<Searching />} />
+              <Route path="/search/:searchTerm" element={<Searching />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </div>
