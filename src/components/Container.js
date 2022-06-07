@@ -12,6 +12,7 @@ const Container = ({ searchTerm }) => {
 
   return (
     <div className="photo-container">
+     
       {loading ? <Loader /> : <Gallery data={images} />}
     </div>
   );
