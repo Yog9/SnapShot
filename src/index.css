@@ -162,6 +162,18 @@ input {
   margin-left: auto;
   margin-right: auto;
 }
+.spinner {
+  border: 6px solid #f3f3f3;
+  /* Light grey */
+  border-top: 6px solid black;
+  /* Blue */
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  animation: spin 2s linear infinite;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 @keyframes spin {
   0% {
