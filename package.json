@@ -35,5 +35,34 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "bundlemon": "^2.0.0"
+  },
+  "bundlemon": {
+    "baseDir": "./build",
+    "files": [
+      {
+        "path": "index.html"
+      },
+      {
+        "path": "static/js/*.<hash>.chunk.js",
+        "maxPercentIncrease": 10
+      },
+      {
+        "path": "static/js/runtime-main.<hash>.js",
+        "maxSize": "1kb"
+      }
+    ],
+    "reportOutput": [
+      [
+        "github",
+        {
+          "checkRun": true,
+          "commitStatus": true,
+          "prComment": true
+        }
+      ]
+    ]
   }
 }
