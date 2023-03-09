@@ -233,3 +233,32 @@ input {
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
   }
 }
+
+
+@media screen and (max-width: 799px) {
+ 
+  .forkongithub a {
+    width: 200px;
+    position: absolute;
+    top: 60px;
+    right: -60px;
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+    animation-name: hide-element;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+  }
+}
+@keyframes hide-element {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
