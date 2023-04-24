@@ -7,6 +7,7 @@ const PhotoContextProvider = props => {
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(true);
   const runSearch = query => {
+    setLoading(true);
     axios
       .get(
         `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&per_page=24&format=json&nojsoncallback=1`
@@ -16,6 +17,7 @@ const PhotoContextProvider = props => {
         setLoading(false);
       })
       .catch(error => {
+        setLoading(false);
         console.log(
           "Encountered an error with fetching and parsing data",
           error
