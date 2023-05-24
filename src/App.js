@@ -44,11 +44,7 @@ class App extends Component {
               <Route path="/food" render={() => <Item searchTerm="food" />} />
               <Route
                 path="/search/:searchInput"
-                render={props => (
-                  <Search searchTerm={props.match.params.searchInput} />
-                )}
               />
-              <Route component={NotFound} />
             </Switch>
           </div>
         </HashRouter>
