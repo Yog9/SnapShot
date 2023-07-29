@@ -2,11 +2,11 @@ import React from "react";
 import Form from "./Form";
 import Navigation from "./Navigation";
 
-const Header = ({ history, handleSubmit }) => {
+const Header = ({ history }) => {
   return (
     <div>
       <h1>SnapShot</h1>
-      <Form history={history} handleSubmit={handleSubmit} />
+      <Form history={history} />
       <Navigation />
     </div>
   );
