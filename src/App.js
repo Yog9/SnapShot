@@ -8,12 +8,12 @@ import NotFound from "./components/NotFound";
 
 class App extends Component {
   // Prevent page reload, clear input, set URL and push history on submit
-  handleSubmit = (e, history, searchInput) => {
-    e.preventDefault();
-    e.currentTarget.reset();
-    let url = `/search/${searchInput}`;
-    history.push(url);
-  };
+  // handleSubmit = (e, history, searchInput) => {
+  //   e.preventDefault();
+  //   e.currentTarget.reset();
+  //   let url = `/search/${searchInput}`;
+  //   history.push(url);
+  // };
 
   render() {
     return (
@@ -23,7 +23,7 @@ class App extends Component {
             <Route
               render={props => (
                 <Header
-                  handleSubmit={this.handleSubmit}
+                  // handleSubmit={this.handleSubmit}
                   history={props.history}
                 />
               )}
