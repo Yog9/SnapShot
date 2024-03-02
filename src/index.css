@@ -233,3 +233,13 @@ input {
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
   }
 }
+.search-form button{
+  border: 3px solid #d7dbdf;
+  background-color: #ccc;
+}
+.main-nav ul li a{
+  transition: transform 0.5s ease-out;
+}
+.main-nav ul li a:hover{
+  transform: scale(1.15);
+}
